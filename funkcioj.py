@@ -1,6 +1,8 @@
 import os
 import sys
 
+def run(teksto, konvertsistemo)
+
 def main():
     pass
 
