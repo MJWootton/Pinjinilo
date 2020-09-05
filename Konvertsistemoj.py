@@ -8,15 +8,16 @@
  | |       _| |_  | |\  | | |__| |  _| |_  | |\  |  _| |_  | |____  | |__| |
  |_|      |_____| |_| \_|  \____/  |_____| |_| \_| |_____| |______|  \____/
 
-Pinjinilo: Konverti Ĉinan Pinjinan (汉语拼音) Tekston al Esperanto-Literumsistemo
+Pinjinilo: Konverti Ĉinan Pinjinan (汉语拼音) Tekston
+           kaj Ĉinsignojn (汉字) al Esperanto-Literumsistemo
 ================================================================================
 Pinjino estas sistemo por priskribi la sonojn de ĉinsignoj per latinaj literoj.
 La literoj uzataj malsamas al tiuj en la alfabeto de Esperanto, do la celo de ĉi
-tiu skripto estas konverti de norma Pinjino al proksimumo laŭ la literumsistemo
-de Esperanto. Defaŭlte, ĝi uzas la sistemon kreitan de la revuo El Popola
-Ĉinio [1], sed la uzanto povas uzi iun ajn sistemon, se oni kreas sian propran
-dosieron priskribantan ĝin. Python 3 aŭ pli freŝa versio estas bezonata por roli
-Pinjinon [2].
+tiu skripto estas konverti de norma Pinjino aŭ ĉinsignoj al proksimumo laŭ la
+literumsistemo de Esperanto. Defaŭlte, ĝi uzas la sistemon kreitan de la revuo
+El Popola Ĉinio [1], sed la uzanto povas uzi iun ajn sistemon, se oni kreas sian
+propran dosieron priskribantan ĝin. Python 3 aŭ pli freŝa versio estas bezonata
+por roli Pinjinon [2]. Modulo "xpinyin" [3] necesas por konverti ĉinsignojn.
 
 Ĉi tiu dosiero enhavas la antaŭinstalitajn konvertsistemojn.
 
@@ -24,6 +25,8 @@ Citaĵoj
 ----------
 [1] https://eo.wikipedia.org/wiki/Esperantigo_de_vortoj_el_%C4%89ina_fonto
 [2] https://www.python.org
+[3] https://pypi.org/project/xpinyin
+[4] ASCII-arto kreita per http://www.patorjk.com/software/taag
 
 Bezonaĵoj
 ----------
@@ -116,6 +119,5 @@ def doniSistemon(nomo=None):
             for sx in s.keys():
                 if sx != 'NOMO':
                     ss.append(sx.lower())
-            print("Found")
             return s, ss
     return None, ss

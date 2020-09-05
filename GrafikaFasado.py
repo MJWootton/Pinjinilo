@@ -8,23 +8,26 @@
  | |       _| |_  | |\  | | |__| |  _| |_  | |\  |  _| |_  | |____  | |__| |
  |_|      |_____| |_| \_|  \____/  |_____| |_| \_| |_____| |______|  \____/
 
-Pinjinilo: Konverti Ĉinan Pinjinan (汉语拼音) Tekston al Esperanto-Literumsistemo
+Pinjinilo: Konverti Ĉinan Pinjinan (汉语拼音) Tekston
+           kaj Ĉinsignojn (汉字) al Esperanto-Literumsistemo
 ================================================================================
 Pinjino estas sistemo por priskribi la sonojn de ĉinsignoj per latinaj literoj.
 La literoj uzataj malsamas al tiuj en la alfabeto de Esperanto, do la celo de ĉi
-tiu skripto estas konverti de norma Pinjino al proksimumo laŭ la literumsistemo
-de Esperanto. Defaŭlte, ĝi uzas la sistemon kreitan de la revuo El Popola
-Ĉinio [1], sed la uzanto povas uzi iun ajn sistemon, se oni kreas sian propran
-dosieron priskribantan ĝin. Python 3 aŭ pli freŝa versio estas bezonata por roli
-Pinjinon [2].
+tiu skripto estas konverti de norma Pinjino aŭ ĉinsignoj al proksimumo laŭ la
+literumsistemo de Esperanto. Defaŭlte, ĝi uzas la sistemon kreitan de la revuo
+El Popola Ĉinio [1], sed la uzanto povas uzi iun ajn sistemon, se oni kreas sian
+propran dosieron priskribantan ĝin. Python 3 aŭ pli freŝa versio estas bezonata
+por roli Pinjinon [2]. Modulo "xpinyin" [3] necesas por konverti ĉinsignojn.
 
-Ĉi tiu dosiero provizas la grafikan fasadon uzante la modulon PySimpleGUI [3].
+Ĉi tiu dosiero provizas la grafikan fasadon uzante la modulon PySimpleGUI [4].
 
 Citaĵoj
 ----------
 [1] https://eo.wikipedia.org/wiki/Esperantigo_de_vortoj_el_%C4%89ina_fonto
 [2] https://www.python.org
-[3] https://pysimplegui.readthedocs.io
+[3] https://pypi.org/project/xpinyin
+[4] https://pysimplegui.readthedocs.io
+[5] ASCII-arto kreita per http://www.patorjk.com/software/taag
 
 Bezonaĵoj
 ----------
@@ -35,6 +38,7 @@ Bezonaĵoj
 Aŭtorrajto
 ----------
 (c) Mark Woottton 2020
+
 ================================================================================
 '''
 import os
@@ -62,14 +66,15 @@ def helpoFenestro(bildsimbolo):
     titolo += ' | |       _| |_  | |\\  | | |__| |  _| |_  | |\\  |  _| |_  | |____  | |__| |\n'
     titolo += ' |_|      |_____| |_| \\_|  \\____/  |_____| |_| \\_| |_____| |______|  \\____/'
     priskribo  = 'Pinjino estas sistemo por priskribi la sonojn de ĉinsignoj per latinaj literoj. '
-    priskribo += 'La literoj uzataj malsamas al tiuj en la alfabeto de Esperanto, do la celo de ĉi '
-    priskribo += 'tiu skripto estas konverti de norma Pinjino al proksimumo laŭ la literumsistemo '
+    priskribo += 'La literoj uzataj malsamas al tiuj en la alfabeto de Esperanto, do la celo de '
+    priskribo += 'Pinjinilo estas konverti de norma Pinjino kaj ĉinsignoj* al proksimumo laŭ la literumsistemo '
     priskribo += 'de Esperanto. Defaŭlte, ĝi uzas la sistemon kreitan de la revuo El Popola '
     priskribo += 'Ĉinio, sed la uzanto povas uzi iun ajn sistemon, se oni kreas sian propran '
     priskribo += 'dosieron priskribantan ĝin.'
+    priskribo += '\n\nKonsciu, ke Pinjinilo ne estas tradukilo, sed transliterumilo.'
     helpo  = 'Helpo:\n\n'
     helpo += 'Oni povas doni tekston al Pinjinilo por konverti aŭ rekte aŭ de dosiero. Por '
-    helpo += 'konverti tekston, aŭ tajpu en la tekstujon apud "Enmetu tekston" kaj alklaku la '
+    helpo += 'konverti tekston, aŭ tajpu en la tekstujon apud "Tajpu pinjinan tekston aŭ ĉinsignojn" kaj alklaku la '
     helpo += 'butonon "Konverti tekston", aŭ alklaku la butonon "Konverti dosieron" por elekti '
     helpo += 'tekstdosieron. Via originala teksto aperos maldekstre kaj la konverita dekstre. '
     helpo += '\n\n'
@@ -83,21 +88,21 @@ def helpoFenestro(bildsimbolo):
     intrukcioj += '......'
     # Krei aranĝon
     arangxo = [   [sg.Text(titolo, font='Courier 12', size=(80,6), background_color="white")],
-                  [sg.Text('Konverti Ĉinan Pinjinan (汉语拼音) Tekston al Esperanto-Literumsistemo', background_color="white")],
+                  [sg.Text('Konverti Ĉinan Pinjinan (汉语拼音) Tekston kaj Ĉinsignojn (汉字) al Esperanto-Literumsistemo', background_color="white")],
                   [sg.Text('\n© Mark Wootton 2020', background_color="white")],
                   [sg.Text('_'*76, font='Courier 12', background_color="white")],
-                  [sg.Text(priskribo, size=[105,4], background_color="white")],
+                  [sg.Text(priskribo, size=[105,6], background_color="white")],
                   # [sg.Text('='*76, font='Courier 12', background_color="white")],
                   [sg.Text('_'*76, font='Courier 12', background_color="white")],
                   [sg.Text(helpo, size=[105,8], background_color="white")],
                   [sg.Text(intrukcioj, font='Courier 12', background_color="white")],
                   [sg.Text('Ne inkluzivu la krampojn kaj ne metu spaceton inter pinjinon kaj esperantigon.', background_color="white")],
                   [sg.Text('_'*76, font='Courier 12', background_color="white")],
-                  [sg.Text('Konsciu, ke Pinjinilo ne estas uzebla dum ĉi tiu fenestro ankoraŭ estas malfermita.', background_color="white")],
+                  [sg.Text('*Iomete da ĉinsignoj havas plurajn elparolojn, do tiukaze, oni eble ricevos malĝustan rezulton por tiuj ĉinsignoj.', background_color="white")],
                   [sg.Button('Reen')]
               ]
     # Krei fenestron
-    fenestro = sg.Window('Pinjinilo: Helpo kaj Priskribo', arangxo, icon=bildsimbolo, background_color='white')
+    fenestro = sg.Window('Pinjinilo: Helpo kaj Priskribo', arangxo, icon=bildsimbolo, background_color='white')#, keep_on_top=True)
     while True:
         eventoH, _ = fenestro.read()
         if eventoH == sg.WIN_CLOSED or eventoH == 'Reen':
@@ -121,9 +126,9 @@ def main():
     konvertsistemo = None
     # Krei maldekstran aranĝon
     enigo = [   [sg.Text('Elektu tekston aŭ dosieron por konverti', size=(50,1))],
-                [sg.Text('Enmetu tekston:'), sg.InputText(background_color='white', do_not_clear=True)],
+                [sg.Text('Tajpu pinjinan tekston aŭ ĉinsignojn:'), sg.InputText(background_color='white', size=(26,1), do_not_clear=True)],
                 # [sg.Text('Dosiero:'), ],
-                [sg.Button('Konverti tekston'), sg.Input(key='_LEGIDOSIERON_', enable_events=True, visible=False), sg.FileBrowse('Konverti dosieron', target='_LEGIDOSIERON_', file_types=(('TXT', '.txt'), ('All files', '*'))), sg.Input(key='_SXANGXIKONVERTSISTEMON_', enable_events=True, visible=False), sg.FileBrowse('Ŝanĝi konvertsistemon', target='_SXANGXIKONVERTSISTEMON_', file_types=(('csv', '.csv'), ('TXT', '.txt'), ('All files', '*')), initial_folder=os.path.join(os.path.split(os.path.dirname(sys.argv[0]))[0], 'konvertsistemoj') )],#, sg.Button('Forigi enigojn')],
+                [sg.Button('Konverti tekston', bind_return_key=True), sg.Input(key='_LEGIDOSIERON_', enable_events=True, visible=False), sg.FileBrowse('Konverti dosieron', target='_LEGIDOSIERON_', file_types=(('TXT', '.txt'), ('All files', '*'))), sg.Input(key='_SXANGXIKONVERTSISTEMON_', enable_events=True, visible=False), sg.FileBrowse('Ŝanĝi konvertsistemon', target='_SXANGXIKONVERTSISTEMON_', file_types=(('csv', '.csv'), ('TXT', '.txt'), ('All files', '*')), initial_folder=os.path.join(os.path.split(os.path.dirname(sys.argv[0]))[0], 'konvertsistemoj') )],#, sg.Button('Forigi enigojn')],
                 [sg.Text('', key='dosiero', size=(60, 2))],
                 [sg.Text('Originala teksto:')],
                 [sg.Text(enTeksto, background_color='white', size=(60,10), key='enTeksto')],
@@ -177,7 +182,9 @@ def main():
             konvertsistemo = datumujo['Ŝanĝi konvertsistemon']
         # Montri fenestron de Helpo kaj Priskribo
         elif evento == 'Helpo kaj Priskribo':
+            cxeffenestro.hide()
             helpoFenestro(bildsimbolo)
+            cxeffenestro.un_hide()
         # Konservi eligon
         elif evento == '_KONSERVIDOSIERON_':
             if len(elTeksto):
