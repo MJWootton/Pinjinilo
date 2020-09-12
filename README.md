@@ -1,4 +1,4 @@
-# *Pinjinilo*
+# *Pinjinilo* ![Pinjinilo](http://https://raw.githubusercontent.com/MJWootton/Pinjinilo/master/bildsimbolo/bildsimbolo.png)
 ## Konverti Ĉinan Pinjinan (汉语拼音) Tekston kaj Ĉinsignojn (汉字) al Esperanto-Literumsistemo
 
 Pinjino estas sistemo por priskribi la sonojn de ĉinsignoj per latinaj literoj. La literoj uzataj malsamas al tiuj en la alfabeto de Esperanto, do la celo de ĉi tiu programo estas konverti de norma Pinjino aŭ ĉinsignoj al proksimumo laŭ la literumsistemo de Esperanto. Defaŭlte, ĝi uzas la sistemon kreitan de la revuo [*El Popola Ĉinio*](https://eo.wikipedia.org/wiki/Esperantigo_de_vortoj_el_%C4%89ina_fonto), sed la uzanto povas uzi iun ajn sistemon, se oni kreas sian propran dosieron priskribantan ĝin. [Python 3](https://www.python.org) aŭ pli freŝa versio estas bezonata por roli *Pinjinilon*. Modulo [*xpinyin*](https://pypi.org/project/xpinyin) necesas por konverti ĉinsignojn.
