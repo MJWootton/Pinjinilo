@@ -1,0 +1,1 @@
+Legu min
