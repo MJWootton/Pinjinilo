@@ -63,6 +63,12 @@ try:
 except:
     largxoDefauxlta = 80
 
+def pjv():
+    """
+    Liveri la nuntempan version
+    """
+    return "20200912"
+
 def plprint(montroto, largxo=largxoDefauxlta):
     """
     Funkcio por montri plurajn lineojn sen saltoj en vortoj ĉe la linefino
@@ -70,7 +76,7 @@ def plprint(montroto, largxo=largxoDefauxlta):
     Enigoj
     ----------
     montroto : string
-        Teskto montrota
+        Teksto montrota
     largxo : integer
         Maksimuma larĝo de lineo
         Defaŭlta valoro: 'largxoDefauxlta', kiel videbla supren
@@ -219,8 +225,12 @@ def konverti(teksto, konvertsistemo, ordo):
     # Krei datumujojn
     neripetoj = ''
     rezulto = ''
-    # Konverti ĉinsignojn pinjinen
-    teksto = xpinyin.Pinyin().get_pinyin(teksto, ' ')
+    # Konverti ĉinsignojn pinjinen kaj meti streketon inter nur apudajn ĉinsignojn
+    teksto = xpinyin.Pinyin().get_pinyin(teksto, '¬').replace('¬ ¬', ' ').replace('¬ ', ' ').replace(' ¬', ' ')
+    for t in range(len(teksto)-1):
+        if teksto[t] == '¬' and teksto[t+1].upper() in literoj:
+            teksto = teksto[:t] + '-' + teksto[t+1:]
+    teksto = teksto.replace('¬', '')
     # Krei minuskligitan version de la teksto
     anstatauxigita = teksto.lower()
     # Forigi tonajn kromsignojn
@@ -327,7 +337,7 @@ def helpmesagxo(versio=None):
     print(' |  ___/    | |   | . ` |  _   | |   | |   | . ` |   | |   | |      | |  | |')
     print(' | |       _| |_  | |\\  | | |__| |  _| |_  | |\\  |  _| |_  | |____  | |__| |')
     print(' |_|      |_____| |_| \\_|  \\____/  |_____| |_| \\_| |_____| |______|  \\____/')
-    print('')
+    print('\nVersio %s\n' % pjv())
     plprint('Konverti Ĉinan Pinjinan (汉语拼音) Tekston kaj Ĉinsignojn (汉字) al Esperanto-Literumsistemo')
     print('')
     plprint('(c) Mark Wootton 2020')

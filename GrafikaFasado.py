@@ -58,13 +58,24 @@ def helpoFenestro(bildsimbolo):
         Dosierindiko de la bildsimbolo
 
     """
+    # Trovi operaciumon por agordi larĝon de teksta areo
+    operaciumo = platform.system()
+    if operaciumo == 'Linux':
+        largxo = 105
+    elif operaciumo == 'Windows':
+        largxo = 95
+    elif operaciumo == 'Dawin': # MacOs ktp.
+        largxo = 88
+    else:
+        largxo = 105
     # Krei mesaĝon
     titolo  = '  _____    _____   _   _        _   _____   _   _   _____   _         ____\n'
     titolo += ' |  __ \\  |_   _| | \\ | |      | | |_   _| | \\ | | |_   _| | |       / __ \\\n'
     titolo += ' | |__) |   | |   |  \\| |      | |   | |   |  \\| |   | |   | |      | |  | |\n'
     titolo += ' |  ___/    | |   | . ` |  _   | |   | |   | . ` |   | |   | |      | |  | |\n'
     titolo += ' | |       _| |_  | |\\  | | |__| |  _| |_  | |\\  |  _| |_  | |____  | |__| |\n'
-    titolo += ' |_|      |_____| |_| \\_|  \\____/  |_____| |_| \\_| |_____| |______|  \\____/'
+    titolo += ' |_|      |_____| |_| \\_|  \\____/  |_____| |_| \\_| |_____| |______|  \\____/\n'
+    titolo += 'Versio %s' % fk.pjv()
     priskribo  = 'Pinjino estas sistemo por priskribi la sonojn de ĉinsignoj per latinaj literoj. '
     priskribo += 'La literoj uzataj malsamas al tiuj en la alfabeto de Esperanto, do la celo de '
     priskribo += 'Pinjinilo estas konverti de norma Pinjino kaj ĉinsignoj* al proksimumo laŭ la literumsistemo '
@@ -87,14 +98,14 @@ def helpoFenestro(bildsimbolo):
     intrukcioj += '{pinjino 3},{esperantigo 3}\n'
     intrukcioj += '......'
     # Krei aranĝon
-    arangxo = [   [sg.Text(titolo, font='Courier 12', size=(80,6), background_color="white")],
+    arangxo = [   [sg.Text(titolo, font='Courier 12', size=(80,7), background_color="white")],
                   [sg.Text('Konverti Ĉinan Pinjinan (汉语拼音) Tekston kaj Ĉinsignojn (汉字) al Esperanto-Literumsistemo', background_color="white")],
                   [sg.Text('\n© Mark Wootton 2020', background_color="white")],
                   [sg.Text('_'*76, font='Courier 12', background_color="white")],
-                  [sg.Text(priskribo, size=[105,6], background_color="white")],
+                  [sg.Text(priskribo, size=[largxo,6], background_color="white")],
                   # [sg.Text('='*76, font='Courier 12', background_color="white")],
                   [sg.Text('_'*76, font='Courier 12', background_color="white")],
-                  [sg.Text(helpo, size=[105,8], background_color="white")],
+                  [sg.Text(helpo, size=[largxo,8], background_color="white")],
                   [sg.Text(intrukcioj, font='Courier 12', background_color="white")],
                   [sg.Text('Ne inkluzivu la krampojn kaj ne metu spaceton inter pinjinon kaj esperantigon.', background_color="white")],
                   [sg.Text('_'*76, font='Courier 12', background_color="white")],
@@ -124,9 +135,24 @@ def main():
     ks = None
     ordo = None
     konvertsistemo = None
+    # Trovi bildsimbolon laǔ operaciumo kaj agordi la larĝon de la tekstskatolo
+    operaciumo = platform.system()
+    if operaciumo == 'Linux':
+        dosiertipo = 'png'
+        largxo = 28
+    elif operaciumo == 'Windows':
+        dosiertipo = 'ico'
+        largxo = 37
+    elif operaciumo == 'Dawin': # MacOs ktp.
+        dosiertipo = 'png'
+        largxo = 44
+    else:
+        dosiertipo = 'png'
+        largxo
+    bildsimbolo = os.path.join(os.path.split(os.path.dirname(sys.argv[0]))[0], 'bildsimbolo', 'bildsimbolo.%s' % dosiertipo)
     # Krei maldekstran aranĝon
     enigo = [   [sg.Text('Elektu tekston aŭ dosieron por konverti', size=(50,1))],
-                [sg.Text('Tajpu pinjinan tekston aŭ ĉinsignojn:'), sg.InputText(background_color='white', size=(26,1), do_not_clear=True)],
+                [sg.Text('Tajpu pinjinan tekston aŭ ĉinsignojn:'), sg.InputText(background_color='white', size=(largxo,1), do_not_clear=True)],
                 # [sg.Text('Dosiero:'), ],
                 [sg.Button('Konverti tekston', bind_return_key=True), sg.Input(key='_LEGIDOSIERON_', enable_events=True, visible=False), sg.FileBrowse('Konverti dosieron', target='_LEGIDOSIERON_', file_types=(('TXT', '.txt'), ('All files', '*'))), sg.Input(key='_SXANGXIKONVERTSISTEMON_', enable_events=True, visible=False), sg.FileBrowse('Ŝanĝi konvertsistemon', target='_SXANGXIKONVERTSISTEMON_', file_types=(('csv', '.csv'), ('TXT', '.txt'), ('All files', '*')), initial_folder=os.path.join(os.path.split(os.path.dirname(sys.argv[0]))[0], 'konvertsistemoj') )],#, sg.Button('Forigi enigojn')],
                 [sg.Text('', key='dosiero', size=(60, 2))],
@@ -147,16 +173,6 @@ def main():
             ]
     # Kunmeti la du kolumnojn
     cxefarangxo = [[sg.Column(enigo), sg.VSeperator(), sg.Column(eligo)]]
-    # Trovi bildsimbolon laǔ operaciumo
-    dosiertipo = 'png'
-    operaciumo = platform.system()
-    if operaciumo == 'Linux':
-        dosiertipo = 'png'
-    elif operaciumo == 'Windows':
-        dosiertipo = 'ico'
-    elif operaciumo == 'Dawin': # MacOs ktp.
-        dosiertipo = 'png'
-    bildsimbolo = os.path.join(os.path.split(os.path.dirname(sys.argv[0]))[0], 'bildsimbolo', 'bildsimbolo.%s' % dosiertipo)
     # Krei la ĉeffenestron
     cxeffenestro = sg.Window('Pinjinilo', cxefarangxo, icon=bildsimbolo)
     # Iteracii ĝis ĉeffenestro estos fermita
@@ -171,7 +187,7 @@ def main():
             enTeksto = datumujo[0]
             cxeffenestro['dosiero'].update('')
             if not len(enTeksto):
-                sg.popup('Mankas teksto por konverti', title='Mankas teksto', custom_text=('Bone'), background_color='white')
+                sg.popup('Mankas teksto por konverti', title='Mankas teksto', custom_text=('Bone'), background_color='white', keep_on_top=True)
         # Konverti tekston de dosiero
         elif evento == '_LEGIDOSIERON_':
             novaDosiero = datumujo['Konverti dosieron']
@@ -193,9 +209,9 @@ def main():
                     fk.konserviTekston(elTeksto, konservindiko)
                 except:
                     if len(konservindiko):
-                        sg.popup('Vi ne povas konservi dosieron ĉe \'%s\'.\nReprovu aliloke.' % konservindiko, title='Konservada Eraro', custom_text=('Bone'), background_color='white')
+                        sg.popup('Vi ne povas konservi dosieron ĉe \'%s\'.\nReprovu aliloke.' % konservindiko, title='Konservada Eraro', custom_text=('Bone'), background_color='white', keep_on_top=True)
             else:
-                sg.popup('Troviĝas ankoraŭ nenio por konservi', title='Nenio konservebla', custom_text=('Bone'), background_color='white')
+                sg.popup('Troviĝas ankoraŭ nenio por konservi', title='Nenio konservebla', custom_text=('Bone'), background_color='white', keep_on_top=True)
 
         # Ĝisdatigi etikedon ĉu nedefaŭlta konvertsistemo estas uzata
         if ks is None or ks['NOMO'] == 'Defaŭlto':
