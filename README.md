@@ -6,7 +6,7 @@ Pinjino estas sistemo por priskribi la sonojn de ĉinsignoj per latinaj literoj.
 
 ### Bezonaĵoj
 * [*Python 3*](https://www.python.org)
-* *[*PySimpleGUI*](https://pysimplegui.readthedocs.io)
+* [*PySimpleGUI*](https://pysimplegui.readthedocs.io)
 * [*xpinyin*](https://pypi.org/project/xpinyin)
 * *PyInstaller* (nur por krei memstaran ruleblan dosieron)
 * Oni eble bezonos instali ankaŭ la modulon [*tkinter*](https://wiki.python.org/moin/TkInter)
