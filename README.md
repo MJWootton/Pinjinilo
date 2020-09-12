@@ -33,5 +33,16 @@ pyinstaller --onefile --noconsol --icon bildsimbolo/bildsimbolo.ico Pinjinilo.py
 MacOS:
 *Se oni ekscias, kiel funkciigi la memstaraĵon en MacOs, bonvole sciigu ankaŭ min*
 
+### Krei Konvertsistemon
+Por krei alian konvertsistemon, skribu ĝin en `*.csv` dosiero kun la jenan strukturon:
+```
+{nomo de konvertsistemo}
+{pinjino 1},{esperantigo 1}
+{pinjino 2},{esperantigo 2}
+{pinjino 3},{esperantigo 3}
+k.t.p......
+```
+Oni povas alvoki ĝin per alklako de la butono *Ŝanĝi konvertsistemon* en la grafika fasado aŭ per la `-k` opcio en la komandlinea versio de `Funkcioj.py`.
+
 ### Aŭtorrajto
 © Mark Woottton 2020
