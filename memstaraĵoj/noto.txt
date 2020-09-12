@@ -1,0 +1,4 @@
+Versioj de Operaciumoj Uzitaj
+* Ubuntu 20.04
+* Ubuntu MATE 18.04
+* Windows 10 Home
