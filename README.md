@@ -10,7 +10,7 @@ Pinjino estas sistemo por priskribi la sonojn de ĉinsignoj per latinaj literoj.
 * *xpinyin*
 * *Konvertsistemoj* (modulo de *Pinjinilo*)
 * *PyInstaller* (nur por krei memstaran ruleblan dosieron)
-* Oni eble bezonos instali ankaŭ la modulon *tkinter*
+* Oni eble bezonos instali ankaŭ la modulon [*tkinter*](https://wiki.python.org/moin/TkInter)
 
 ### Uzado
 Oni havas tri opciojn por uzi *Pinjinilon*:
