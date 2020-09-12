@@ -13,7 +13,7 @@ Pinjinilo: Konverti Ĉinan Pinjinan (汉语拼音) Tekston
 ================================================================================
 Pinjino estas sistemo por priskribi la sonojn de ĉinsignoj per latinaj literoj.
 La literoj uzataj malsamas al tiuj en la alfabeto de Esperanto, do la celo de ĉi
-tiu skripto estas konverti de norma Pinjino aŭ ĉinsignoj al proksimumo laŭ la
+tiu programo estas konverti de norma Pinjino aŭ ĉinsignoj al proksimumo laŭ la
 literumsistemo de Esperanto. Defaŭlte, ĝi uzas la sistemon kreitan de la revuo
 El Popola Ĉinio [1], sed la uzanto povas uzi iun ajn sistemon, se oni kreas sian
 propran dosieron priskribantan ĝin. Python 3 aŭ pli freŝa versio estas bezonata
@@ -33,7 +33,7 @@ Bezonaĵoj
 ----------
 * Python 3
 * PySimpleGUI
-* Funkcioj (modulo de Pinjilo)
+* Funkcioj (modulo de Pinjinilo)
 
 Aŭtorrajto
 ----------
@@ -96,7 +96,7 @@ def helpoFenestro(bildsimbolo):
     intrukcioj += '{pinjino 1},{esperantigo 1}\n'
     intrukcioj += '{pinjino 2},{esperantigo 2}\n'
     intrukcioj += '{pinjino 3},{esperantigo 3}\n'
-    intrukcioj += '......'
+    intrukcioj += 'k.t.p......'
     # Krei aranĝon
     arangxo = [   [sg.Text(titolo, font='Courier 12', size=(80,7), background_color="white")],
                   [sg.Text('Konverti Ĉinan Pinjinan (汉语拼音) Tekston kaj Ĉinsignojn (汉字) al Esperanto-Literumsistemo', background_color="white")],

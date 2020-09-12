@@ -13,7 +13,7 @@ Pinjinilo: Konverti Ĉinan Pinjinan (汉语拼音) Tekston
 ================================================================================
 Pinjino estas sistemo por priskribi la sonojn de ĉinsignoj per latinaj literoj.
 La literoj uzataj malsamas al tiuj en la alfabeto de Esperanto, do la celo de ĉi
-tiu skripto estas konverti de norma Pinjino aŭ ĉinsignoj al proksimumo laŭ la
+tiu programo estas konverti de norma Pinjino aŭ ĉinsignoj al proksimumo laŭ la
 literumsistemo de Esperanto. Defaŭlte, ĝi uzas la sistemon kreitan de la revuo
 El Popola Ĉinio [1], sed la uzanto povas uzi iun ajn sistemon, se oni kreas sian
 propran dosieron priskribantan ĝin. Python 3 aŭ pli freŝa versio estas bezonata
@@ -35,7 +35,7 @@ Bezonaĵoj
 ----------
 * Python 3
 * xpinyin
-* Konvertsistemoj (modulo de Pinjilo)
+* Konvertsistemoj (modulo de Pinjinilo)
 
 Aŭtorrajto
 ----------
