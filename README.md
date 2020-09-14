@@ -1,15 +1,20 @@
-![Pinjinilo](bildsimbolo/bildsimbolo.png?raw=true)
-# *Pinjinilo*
+# *<img src='bildsimbolo/bildsimbolo.png' width='45' title='Pinjinilo'> Pinjinilo* 
 ## Konverti Ĉinan Pinjinan (汉语拼音) Tekston kaj Ĉinsignojn (汉字) al Esperanto-Literumsistemo
 
-Pinjino estas sistemo por priskribi la sonojn de ĉinsignoj per latinaj literoj. La literoj uzataj malsamas al tiuj en la alfabeto de Esperanto, do la celo de ĉi tiu programo estas konverti de norma Pinjino aŭ ĉinsignoj al proksimumo laŭ la literumsistemo de Esperanto. Defaŭlte, ĝi uzas la sistemon kreitan de la revuo [*El Popola Ĉinio*](https://eo.wikipedia.org/wiki/Esperantigo_de_vortoj_el_%C4%89ina_fonto), sed la uzanto povas uzi iun ajn sistemon, se oni kreas sian propran dosieron priskribantan ĝin. [*Python 3*](https://www.python.org) aŭ pli freŝa versio estas bezonata por roli *Pinjinilon*. Modulo [*xpinyin*](https://pypi.org/project/xpinyin) necesas por konverti ĉinsignojn. [*PySimpleGUI*](https://pysimplegui.readthedocs.io) estas bezonata por uzi la grafikan fasadon.
+
+
+  Pinjino estas sistemo por priskribi la sonojn de ĉinsignoj per latinaj literoj. La literoj uzataj malsamas al tiuj en la alfabeto de Esperanto, do la celo de ĉi tiu programo estas konverti de norma Pinjino aŭ ĉinsignoj al proksimumo laŭ la literumsistemo de Esperanto. Defaŭlte, ĝi uzas la sistemon kreitan de la revuo [*El Popola Ĉinio*](https://eo.wikipedia.org/wiki/Esperantigo_de_vortoj_el_%C4%89ina_fonto), sed la uzanto povas uzi iun ajn sistemon, se oni kreas sian propran dosieron priskribantan ĝin. [*Python 3*](https://www.python.org) aŭ pli freŝa versio estas bezonata por roli *Pinjinilon*. Modulo [*xpinyin*](https://pypi.org/project/xpinyin) necesas por konverti ĉinsignojn. [*PySimpleGUI*](https://pysimplegui.readthedocs.io) estas bezonata por uzi la grafikan fasadon.
+ 
+<p align="center">
+  <img src='ekrankopioj/GrafikaFasado.png' width='500' title='La grafika fasado de Pinjinilo'><img src='ekrankopioj/Komandlineo.png' width='400' title='La komandlinea fasado de Pinjinilo'>
+</p>
 
 ### Bezonaĵoj
 * [*Python 3*](https://www.python.org)
 * [*PySimpleGUI*](https://pysimplegui.readthedocs.io)
 * [*xpinyin*](https://pypi.org/project/xpinyin)
+* [*tkinter*](https://wiki.python.org/moin/TkInter) (Oni eble trovos, ke tiu jam estis instalita samtempe de Python mem)
 * [*PyInstaller*](https://www.pyinstaller.org) (nur por krei memstaran ruleblan dosieron)
-* Oni eble bezonos instali ankaŭ la modulon [*tkinter*](https://wiki.python.org/moin/TkInter)
 
 ### Uzado
 Oni havas tri opciojn por uzi *Pinjinilon*:
