@@ -18,7 +18,7 @@ Pinjinilo: Konverti Ĉinan Pinjinan (汉语拼音) Tekston
 Por krei memstaran aplikaĵon per PyInstaller (https://www.pyinstaller.org), uzu
 unu el la jenaj komandoj, taŭgan por via operaciumo.
 
-[Linux & MacOs]
+[Linux kaj MacOs]
 pyinstaller --onefile --noconsol --icon bildsimbolo/bildsimbolo.png Pinjinilo.py
 
 [Windows]

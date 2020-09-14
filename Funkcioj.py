@@ -53,7 +53,8 @@ import shutil
 try:
     import xpinyin
 except:
-    pass
+    if __name__ != '__main__':
+        import xpinyin
 
 import Konvertsistemoj
 
@@ -67,7 +68,7 @@ def pjv():
     """
     Liveri la nuntempan version
     """
-    return "20200912"
+    return "20200914"
 
 def plprint(montroto, largxo=largxoDefauxlta):
     """
@@ -337,10 +338,10 @@ def helpmesagxo(versio=None):
     print(' |  ___/    | |   | . ` |  _   | |   | |   | . ` |   | |   | |      | |  | |')
     print(' | |       _| |_  | |\\  | | |__| |  _| |_  | |\\  |  _| |_  | |____  | |__| |')
     print(' |_|      |_____| |_| \\_|  \\____/  |_____| |_| \\_| |_____| |______|  \\____/')
-    print('\nVersio %s\n' % pjv())
-    plprint('Konverti Ĉinan Pinjinan (汉语拼音) Tekston kaj Ĉinsignojn (汉字) al Esperanto-Literumsistemo')
+    #print('\nVersio %s\n' % pjv())
     print('')
-    plprint('(c) Mark Wootton 2020')
+    plprint('Konverti Ĉinan Pinjinan (汉语拼音) Tekston kaj Ĉinsignojn (汉字) al Esperanto-Literumsistemo')
+    plprint('(c) Mark Wootton 2020 [Versio %s]' % pjv())
     print('='*80)
     print('Enigoj:')
     plprint(tab + '[teksto] (unua, nepra)  :  la teksto konverota mem (uzu citmarkojn) aŭ indiko al tekstdosiero')

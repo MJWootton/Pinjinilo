@@ -100,7 +100,7 @@ def helpoFenestro(bildsimbolo):
     # Krei aranĝon
     arangxo = [   [sg.Text(titolo, font='Courier 12', size=(80,7), background_color="white")],
                   [sg.Text('Konverti Ĉinan Pinjinan (汉语拼音) Tekston kaj Ĉinsignojn (汉字) al Esperanto-Literumsistemo', background_color="white")],
-                  [sg.Text('\n© Mark Wootton 2020', background_color="white")],
+                  [sg.Text('© Mark Wootton 2020', background_color="white")],
                   [sg.Text('_'*76, font='Courier 12', background_color="white")],
                   [sg.Text(priskribo, size=[largxo,6], background_color="white")],
                   # [sg.Text('='*76, font='Courier 12', background_color="white")],
