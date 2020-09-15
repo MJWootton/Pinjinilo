@@ -16,8 +16,8 @@ La literoj uzataj malsamas al tiuj en la alfabeto de Esperanto, do la celo de ĉ
 tiu programo estas konverti de norma Pinjino aŭ ĉinsignoj al proksimumo laŭ la
 literumsistemo de Esperanto. Defaŭlte, ĝi uzas la sistemon kreitan de la revuo
 El Popola Ĉinio [1], sed la uzanto povas uzi iun ajn sistemon, se oni kreas sian
-propran dosieron priskribantan ĝin. Python 3 aŭ pli freŝa versio estas bezonata
-por roli Pinjinon [2]. Modulo "xpinyin" [3] necesas por konverti ĉinsignojn.
+propran dosieron priskribantan ĝin. Python 3 estas bezonata por roli Pinjinon
+[2]. Modulo "xpinyin" [3] necesas por konverti ĉinsignojn.
 
 Ĉi tiu dosiero provizas la funkciojn por legi la konvertsistemon laŭ nomo aŭ
 dosierindiko kaj konverti tekston de la komandlinio aŭ dosiero. Krom kiel la
@@ -349,7 +349,7 @@ def helpmesagxo(versio=None):
     plprint(tab + '-h (nedeviga)  :   peti helpon - meti ĉi tiun mesaĝon kaj ĉesi')
     atentoj = []
     if versio[0] < 3:
-        atentoj.append('- Python 3 aŭ pli freŝa versio estas bezonata. Versio %d.%d rekoniĝis.' % (versio[0], versio[1]))
+        atentoj.append('- Python 3 estas bezonata. Versio %d.%d rekoniĝis.' % (versio[0], versio[1]))
     if "xpinyin" not in sys.modules:
         atentoj.append('- Modulo "xpinyin" ne povis esti alvokita.')
     if len(atentoj):

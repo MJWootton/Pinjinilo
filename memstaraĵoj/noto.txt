@@ -2,3 +2,5 @@ Versioj de Operaciumoj Uzitaj
 * Ubuntu 20.04
 * Ubuntu MATE 18.04
 * Windows 10 Home
+
+Se neniu dosiero el ĉi tiuj funkcias en onia komputilo, oni povas krei memstaraĵon per PyInstaller -- rigardu la dosieron 'README.md' por legi pli da detaloj.
