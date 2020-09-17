@@ -114,7 +114,7 @@ def legiTekston(teksto):
 
 def konserviTekston(teksto, dosierindiko):
     """
-    Funcio por konservi konveritan tekston en dosiero
+    Funcio por konservi konvertitan tekston en dosiero
 
     Enigoj
     ----------
@@ -252,10 +252,10 @@ def konverti(teksto, konvertsistemo, ordo):
         elif anstatauxigita[m] not in literoj:
             neripetoj += anstatauxigita[m]
     neripetoj += anstatauxigita[-1]
-    # Krei listojn de la individuaj vortoj de la originala kaj konverita tekstoj
+    # Krei listojn de la individuaj vortoj de la originala kaj konvertita tekstoj
     aparte = teksto.replace('\n' , '\n ').split(' ')
     neripetoj = neripetoj.split(' ')
-    # Restaŭri la usklecon de la literoj de la originala teksto en la konverita
+    # Restaŭri la usklecon de la literoj de la originala teksto en la konvertita
     for tn in range(len(aparte)):
         if not len(aparte[tn]):
             continue

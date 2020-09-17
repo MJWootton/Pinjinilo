@@ -16,7 +16,7 @@ La literoj uzataj malsamas al tiuj en la alfabeto de Esperanto, do la celo de ĉ
 tiu programo estas konverti de norma Pinjino aŭ ĉinsignoj al proksimumo laŭ la
 literumsistemo de Esperanto. Defaŭlte, ĝi uzas la sistemon kreitan de la revuo
 El Popola Ĉinio [1], sed la uzanto povas uzi iun ajn sistemon, se oni kreas sian
-propran dosieron priskribantan ĝin. Python 3 estas bezonata por roli Pinjinon 
+propran dosieron priskribantan ĝin. Python 3 estas bezonata por roli Pinjinon
 [2]. Modulo "xpinyin" [3] necesas por konverti ĉinsignojn.
 
 Ĉi tiu dosiero provizas la grafikan fasadon uzante la modulon PySimpleGUI [4].
@@ -87,7 +87,7 @@ def helpoFenestro(bildsimbolo):
     helpo += 'Oni povas doni tekston al Pinjinilo por konverti aŭ rekte aŭ de dosiero. Por '
     helpo += 'konverti tekston, aŭ tajpu en la tekstujon apud "Tajpu pinjinan tekston aŭ ĉinsignojn" kaj alklaku la '
     helpo += 'butonon "Konverti tekston", aŭ alklaku la butonon "Konverti dosieron" por elekti '
-    helpo += 'tekstdosieron. Via originala teksto aperos maldekstre kaj la konverita dekstre. '
+    helpo += 'tekstdosieron. Via originala teksto aperos maldekstre kaj la konvertita dekstre. '
     helpo += '\n\n'
     helpo += 'Por uzi nedefaŭltan konvertsistemon, alklaku la butonon "Ŝanĝi konvertsistemon" '
     helpo += 'kaj elektu la dosieron enhavantan vian deziratan sistemon. Tiaj dosieroj devas '
@@ -167,9 +167,9 @@ def main():
                 # [sg.Text('', size=(50,1))],
                 [sg.Text('', size=(50,1))],
                 [sg.Text('', size=(50,1))],
-                [sg.Text('Jen la konverita teksto:', size=(60,1), key='jen')],
+                [sg.Text('Jen la konvertita teksto:', size=(60,1), key='jen')],
                 [sg.Text(elTeksto, background_color='white', size=(60,10), key='elTeksto')],
-                [sg.Input(key='_KONSERVIDOSIERON_', enable_events=True, visible=False), sg.FileSaveAs('Konservi konveritan tekston', file_types=(('TXT', '.txt'), ('All files', '*')), target='_KONSERVIDOSIERON_')]#, sg.Button('Ĉesi')] # , sg.Text(' '*72)
+                [sg.Input(key='_KONSERVIDOSIERON_', enable_events=True, visible=False), sg.FileSaveAs('Konservi konvertitan tekston', file_types=(('TXT', '.txt'), ('All files', '*')), target='_KONSERVIDOSIERON_')]#, sg.Button('Ĉesi')] # , sg.Text(' '*72)
             ]
     # Kunmeti la du kolumnojn
     cxefarangxo = [[sg.Column(enigo), sg.VSeperator(), sg.Column(eligo)]]
@@ -204,7 +204,7 @@ def main():
         # Konservi eligon
         elif evento == '_KONSERVIDOSIERON_':
             if len(elTeksto):
-                konservindiko = datumujo['Konservi konveritan tekston']
+                konservindiko = datumujo['Konservi konvertitan tekston']
                 try:
                     fk.konserviTekston(elTeksto, konservindiko)
                 except:
@@ -215,9 +215,9 @@ def main():
 
         # Ĝisdatigi etikedon ĉu nedefaŭlta konvertsistemo estas uzata
         if ks is None or ks['NOMO'] == 'Defaŭlto':
-            cxeffenestro['jen'].update('Jen la konverita teksto:')
+            cxeffenestro['jen'].update('Jen la konvertita teksto:')
         else:
-            cxeffenestro['jen'].update('Jen la konverita teksto (laŭ sistemo \'%s\'):' % ks['NOMO'])
+            cxeffenestro['jen'].update('Jen la konvertita teksto (laŭ sistemo \'%s\'):' % ks['NOMO'])
 
         # Konverti tekston
         if len(enTeksto):
