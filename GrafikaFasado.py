@@ -143,12 +143,12 @@ def main():
     elif operaciumo == 'Windows':
         dosiertipo = 'ico'
         largxo = 37
-    elif operaciumo == 'Dawin': # MacOs ktp.
+    elif operaciumo in ['Dawin', 'MacOs']: # MacOs ktp.
         dosiertipo = 'png'
         largxo = 44
     else:
         dosiertipo = 'png'
-        largxo
+        largxo = 28
     bildsimbolo = os.path.join(os.path.split(os.path.dirname(sys.argv[0]))[0], 'bildsimbolo', 'bildsimbolo.%s' % dosiertipo)
     # Krei maldekstran aranĝon
     enigo = [   [sg.Text('Elektu tekston aŭ dosieron por konverti', size=(50,1))],
