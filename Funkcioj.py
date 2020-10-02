@@ -68,7 +68,7 @@ def pjv():
     """
     Liveri la nuntempan version
     """
-    return "20200914"
+    return "1-0"
 
 def plprint(montroto, largxo=largxoDefauxlta):
     """
