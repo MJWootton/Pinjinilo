@@ -1,11 +1,12 @@
 # *<img src='bildsimbolo/bildsimbolo.png' width='45' title='Pinjinilo'> Pinjinilo*
 ## Konverti Ĉinan Pinjinan (汉语拼音) Tekston kaj Ĉinsignojn (汉字) al Esperanto-Literumsistemo
 
-Pinjino estas sistemo por priskribi la sonojn de ĉinsignoj per latinaj literoj. La literoj uzataj malsamas al tiuj en la alfabeto de Esperanto, do la celo de ĉi tiu programo estas konverti de norma Pinjino aŭ ĉinsignoj al proksimumo laŭ la literumsistemo de Esperanto. Defaŭlte, ĝi uzas la [sistemon kreitan](https://eo.wikipedia.org/wiki/Esperantigo_de_vortoj_el_%C4%89ina_fonto) de la revuo [*El Popola Ĉinio*](https://eo.wikipedia.org/wiki/El_Popola_%C4%88inio) (vidu suben), sed la uzanto povas uzi iun ajn sistemon, se oni kreas sian propran dosieron priskribantan ĝin.
+Pinjino estas sistemo por priskribi la sonojn de ĉinsignoj per latinaj literoj. La literoj uzataj malsamas al tiuj en la alfabeto de Esperanto, do la celo de ĉi tiu programo estas konverti de norma Pinjino aŭ ĉinsignoj al proksimumo laŭ la literumsistemo de Esperanto. Defaŭlte, ĝi uzas la [sistemon kreitan](https://eo.wikipedia.org/wiki/Esperantigo_de_vortoj_el_%C4%89ina_fonto) de la revuo [*El Popola Ĉinio*](https://eo.wikipedia.org/wiki/El_Popola_%C4%88inio) ([vidu suben](https://github.com/MJWootton/Pinjinilo#defa%C5%ADlta-konvertsistemo)), sed la uzanto povas uzi iun ajn sistemon, se oni kreas sian propran dosieron priskribantan ĝin.
 
 <p align="center">
   <img src='ekrankopioj/GrafikaFasado.png' width='500' title='La grafika fasado de Pinjinilo'><img src='ekrankopioj/Komandlineo.png' width='400' title='La komandlinea fasado de Pinjinilo'>
 </p>
+
 ### Aŭtorrajto
 
 © Mark Woottton 2020
