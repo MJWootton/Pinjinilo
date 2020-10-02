@@ -56,59 +56,32 @@ Oni povas alvoki ĝin per alklako de la butono *Ŝanĝi konvertsistemon* en la g
 
 La [defaŭlta konvertsistemo](https://eo.wikipedia.org/wiki/Esperantigo_de_vortoj_el_%C4%89ina_fonto) estis kreita de la ĉina Esperanto-revuo [*El Popola Ĉinio*](https://eo.wikipedia.org/wiki/El_Popola_%C4%88inio) kaj troviĝas en la jena tabelo.
 
-| Pinjino | Esperantigo |
-| ------- | ----------- |
-| b       | b           |
-| d       | d           |
-| g       | g           |
-| j       | ĝj          |
-| zh      | ĝ           |
-| z       | z           |
-| p       | p           |
-| t       | t           |
-| k       | k           |
-| q       | ĉj          |
-| ch      | ĉ           |
-| c       | c           |
-| m       | m           |
-| n       | n           |
-| h       | h           |
-| x       | ŝj          |
-| sh      | ŝ           |
-| s       | s           |
-| f       | f           |
-| l       | l           |
-| y       | j           |
-| r       | ĵ           |
-| w       | ŭ           |
-| a       | a           |
-| ai      | aj          |
-| an      | an          |
-| ü       | u           |
-| o       | o           |
-| ei      | ej          |
-| en      | en          |
-| i       | i           |
-| e       | e           |
-| ao      | aŭ          |
-| ang     | ang         |
-| u       | u           |
-| ou      | oŭ          |
-| eng     | eng         |
-| er      | er          |
-| ie      | je          |
-| ia      | ja          |
-| üa      | ŭa          |
-| uo      | ŭo          |
-| üe      | ŭe          |
-| iao     | jaŭ         |
-| iou     | juŭ         |
-| uei     | ŭej         |
-| uai     | ŭaj         |
-| ian     | jan         |
-| uen     | ŭen         |
-| üan     | ŭan         |
-| iang    | jang        |
-| iong    | jong        |
-| ueng    | ŭeng        |
-| uang    | ŭang        |
+| Pinjino | Esperantigo | Pinjino | Esperantigo |
+|---------|-------------|---------|-------------|
+| b       | b           | o       | o           |
+| d       | d           | ei      | ej          |
+| g       | g           | en      | en          |
+| j       | ĝj          | i       | i           |
+| zh      | ĝ           | e       | e           |
+| z       | z           | ao      | aŭ          |
+| p       | p           | ang     | ang         |
+| t       | t           | u       | u           |
+| k       | k           | ou      | oŭ          |
+| q       | ĉj          | eng     | eng         |
+| ch      | ĉ           | er      | er          |
+| c       | c           | ie      | je          |
+| m       | m           | ia      | ja          |
+| n       | n           | üa      | ŭa          |
+| h       | h           | uo      | ŭo          |
+| x       | ŝj          | üe      | ŭe          |
+| sh      | ŝ           | iao     | jaŭ         |
+| s       | s           | iou     | juŭ         |
+| f       | f           | uei     | ŭej         |
+| l       | l           | uai     | ŭaj         |
+| y       | j           | ian     | jan         |
+| r       | ĵ           | uen     | ŭen         |
+| w       | ŭ           | üan     | ŭan         |
+| a       | a           | iang    | jang        |
+| ai      | aj          | iong    | jong        |
+| an      | an          | ueng    | ŭeng        |
+| ü       | u           | uang    | ŭang        |
