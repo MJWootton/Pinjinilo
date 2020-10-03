@@ -50,11 +50,12 @@ import string
 import textwrap
 import shutil
 
-try:
-    import xpinyin
-except:
-    if __name__ != '__main__':
-        import xpinyin
+import xpinyin
+# try:
+#     import xpinyin
+# except:
+#     if __name__ != '__main__':
+#         import xpinyin
 
 import Konvertsistemoj
 
@@ -68,7 +69,7 @@ def pjv():
     """
     Liveri la nuntempan version
     """
-    return "1-0"
+    return "1-1"
 
 def plprint(montroto, largxo=largxoDefauxlta):
     """
@@ -227,7 +228,7 @@ def konverti(teksto, konvertsistemo, ordo):
     neripetoj = ''
     rezulto = ''
     # Konverti ĉinsignojn pinjinen kaj meti streketon inter nur apudajn ĉinsignojn
-    teksto = xpinyin.Pinyin().get_pinyin(teksto, '¬').replace('¬ ¬', ' ').replace('¬ ', ' ').replace(' ¬', ' ')
+    teksto = xpinyin.Pinyin().get_pinyin(teksto.replace('v', 'ü'), '¬').replace('¬ ¬', ' ').replace('¬ ', ' ').replace(' ¬', ' ')
     for t in range(len(teksto)-1):
         if teksto[t] == '¬' and teksto[t+1].upper() in literoj:
             teksto = teksto[:t] + '-' + teksto[t+1:]

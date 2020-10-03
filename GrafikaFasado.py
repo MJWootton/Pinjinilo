@@ -41,21 +41,18 @@ Aŭtorrajto
 
 ================================================================================
 '''
+
 import os
 import sys
 import platform
 import PySimpleGUI as sg
+import pyperclip
 
 import Funkcioj as fk
 
-def helpoFenestro(bildsimbolo):
+def helpoFenestro():
     """
     Funkcio por montri la helpfenestron
-
-    Enigoj
-    ----------
-    bildsimbolo : string
-        Dosierindiko de la bildsimbolo
 
     """
     # Trovi operaciumon por agordi larĝon de teksta areo
@@ -113,7 +110,7 @@ def helpoFenestro(bildsimbolo):
                   [sg.Button('Reen')]
               ]
     # Krei fenestron
-    fenestro = sg.Window('Pinjinilo: Helpo kaj Priskribo', arangxo, icon=bildsimbolo, background_color='white')#, keep_on_top=True)
+    fenestro = sg.Window('Pinjinilo: Helpo kaj Priskribo', arangxo, background_color='white')#, keep_on_top=True)
     while True:
         eventoH, _ = fenestro.read()
         if eventoH == sg.WIN_CLOSED or eventoH == 'Reen':
@@ -149,7 +146,9 @@ def main():
     else:
         dosiertipo = 'png'
         largxo = 28
-    bildsimbolo = os.path.join(os.path.split(os.path.dirname(sys.argv[0]))[0], 'bildsimbolo', 'bildsimbolo.%s' % dosiertipo)
+    # bildsimbolo = os.path.join(os.path.split(os.path.dirname(sys.argv[0]))[0], 'bildsimbolo', 'bildsimbolo.%s' % dosiertipo)
+    # Agordi bildsimbolon
+    sg.SetGlobalIcon(os.path.join(os.path.split(os.path.dirname(sys.argv[0]))[0], 'bildsimbolo', 'bildsimbolo.%s' % dosiertipo))
     # Krei maldekstran aranĝon
     enigo = [   [sg.Text('Elektu tekston aŭ dosieron por konverti', size=(50,1))],
                 [sg.Text('Tajpu pinjinan tekston aŭ ĉinsignojn:'), sg.InputText(background_color='white', size=(largxo,1), do_not_clear=True)],
@@ -161,7 +160,7 @@ def main():
                 [sg.Button('Helpo kaj Priskribo')]
             ]
     # Krei dekstran aranĝon
-    eligo = [   [sg.Text('Pinjinilo', size=(60,1), justification='right')],
+    eligo = [   [sg.Text('Pinjinilo v%s' % fk.pjv(), size=(60,1), justification='right')],
                 [sg.Text('Konverti Ĉinan Pinjinan (汉语拼音) Tekston al Esperanto-Literumsistemo', size=(60,1), justification='right')],
                 [sg.Text('© Mark Wootton 2020', size=(60,1), justification='right')],
                 # [sg.Text('', size=(50,1))],
@@ -169,12 +168,12 @@ def main():
                 [sg.Text('', size=(50,1))],
                 [sg.Text('Jen la konvertita teksto:', size=(60,1), key='jen')],
                 [sg.Text(elTeksto, background_color='white', size=(60,10), key='elTeksto')],
-                [sg.Input(key='_KONSERVIDOSIERON_', enable_events=True, visible=False), sg.FileSaveAs('Konservi konvertitan tekston', file_types=(('TXT', '.txt'), ('All files', '*')), target='_KONSERVIDOSIERON_')]#, sg.Button('Ĉesi')] # , sg.Text(' '*72)
+                [sg.Button('Kopii al tondujo'), sg.Input(key='_KONSERVIDOSIERON_', enable_events=True, visible=False), sg.FileSaveAs('Konservi konvertitan tekston', file_types=(('TXT', '.txt'), ('All files', '*')), target='_KONSERVIDOSIERON_')]#, sg.Button('Ĉesi')] # , sg.Text(' '*72)
             ]
     # Kunmeti la du kolumnojn
     cxefarangxo = [[sg.Column(enigo), sg.VSeperator(), sg.Column(eligo)]]
     # Krei la ĉeffenestron
-    cxeffenestro = sg.Window('Pinjinilo', cxefarangxo, icon=bildsimbolo)
+    cxeffenestro = sg.Window('Pinjinilo', cxefarangxo)
     # Iteracii ĝis ĉeffenestro estos fermita
     while True:
         # Legi eventojn kaj enmetitan datumon
@@ -199,17 +198,19 @@ def main():
         # Montri fenestron de Helpo kaj Priskribo
         elif evento == 'Helpo kaj Priskribo':
             cxeffenestro.hide()
-            helpoFenestro(bildsimbolo)
+            helpoFenestro()
             cxeffenestro.un_hide()
+        # Kopii eligon al tondujo
+        elif evento == 'Kopii al tondujo' and len(elTeksto):
+            pyperclip.copy(elTeksto)
         # Konservi eligon
-        elif evento == '_KONSERVIDOSIERON_':
-            if len(elTeksto):
-                konservindiko = datumujo['Konservi konvertitan tekston']
-                try:
-                    fk.konserviTekston(elTeksto, konservindiko)
-                except:
-                    if len(konservindiko):
-                        sg.popup('Vi ne povas konservi dosieron ĉe \'%s\'.\nReprovu aliloke.' % konservindiko, title='Konservada Eraro', custom_text=('Bone'), background_color='white', keep_on_top=True)
+        elif evento == '_KONSERVIDOSIERON_' and len(elTeksto):
+            konservindiko = datumujo['Konservi konvertitan tekston']
+            try:
+                fk.konserviTekston(elTeksto, konservindiko)
+            except:
+                if len(konservindiko):
+                    sg.popup('Vi ne povas konservi dosieron ĉe \'%s\'.\nReprovu aliloke.' % konservindiko, title='Konservada Eraro', custom_text=('Bone'), background_color='white', keep_on_top=True)
             else:
                 sg.popup('Troviĝas ankoraŭ nenio por konservi', title='Nenio konservebla', custom_text=('Bone'), background_color='white', keep_on_top=True)
 
