@@ -34,12 +34,12 @@ Oni havas tri opciojn por uzi *Pinjinilon*:
 
 *Linux*:
 ```
-pyinstaller --onefile --noconsol --icon bildsimbolo/bildsimbolo.png Pinjinilo.py
+$ pyinstaller --onefile --noconsol --icon bildsimbolo/bildsimbolo.png Pinjinilo.py
 ```
 
 *Windows*:
 ```
-pyinstaller --onefile --noconsol --icon bildsimbolo/bildsimbolo.ico Pinjinilo.py
+$ pyinstaller --onefile --noconsol --icon bildsimbolo/bildsimbolo.ico Pinjinilo.py
 ```
 
 *MacOS*:
