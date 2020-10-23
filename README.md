@@ -20,7 +20,7 @@ Konsciu, ke *Pinjiinilo* nek estas tradukilo, nek konservas tonojn — ĝi nur p
   * [*PySimpleGUI*](https://pysimplegui.readthedocs.io)
   * [*xpinyin*](https://pypi.org/project/xpinyin)
   * [*tkinter*](https://wiki.python.org/moin/TkInter) (Oni eble trovos, ke tiu jam estis instalita samtempe de Python mem)
-  * [pyperclip](https://pypi.org/project/pyperclip) (Uzante Linukson, oni bezonas ankaŭ komandojn [*xclip*](https://github.com/astrand/xclip) aǔ [*xsel*](https://github.com/kfish/xsel), kiuj haveblas en debianidoj per `sudo apt-get install xclip xsel`)
+  * [pyperclip](https://pypi.org/project/pyperclip) (Uzante Linukson, oni bezonas ankaŭ la ilojn [*xclip*](https://github.com/astrand/xclip) aǔ [*xsel*](https://github.com/kfish/xsel), kiuj haveblas en debianidoj per `sudo apt-get install xclip xsel`)
 * [*PyInstaller*](https://www.pyinstaller.org) (nur por krei memstaran ruleblan dosieron)
 
 ### Uzado
@@ -33,12 +33,13 @@ Oni havas tri opciojn por uzi *Pinjinilon*:
 * Kiel memstaran programon. En la dosierujo *memstaraĵoj* troviĝas iom da ruleblaj dosieroj por diversaj operaciumoj. Se estas iu taŭga por onia komputilo, oni povas uzi ĝin por ruli *Pinjinilon* sen la bezono esti instalinta *Python*-interpretilon aŭ la modulojn de ekstera liveranto. Se neniu estas uzebla, oni povas krei sian propran per [*PyInstaller*](https://www.pyinstaller.org), uzante komandon el la la jenaj, kiu taŭgas por onia operaciumo:
 
 *Linux*:
-```
+
+```bash
 $ pyinstaller --onefile --noconsol --icon bildsimbolo/bildsimbolo.png Pinjinilo.py
 ```
 
 *Windows*:
-```
+```bash
 $ pyinstaller --onefile --noconsol --icon bildsimbolo/bildsimbolo.ico Pinjinilo.py
 ```
 
