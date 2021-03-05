@@ -148,7 +148,7 @@ def main():
         largxo = 28
     # bildsimbolo = os.path.join(os.path.split(os.path.dirname(sys.argv[0]))[0], 'bildsimbolo', 'bildsimbolo.%s' % dosiertipo)
     # Agordi bildsimbolon
-    sg.SetGlobalIcon(os.path.join(os.path.split(os.path.dirname(sys.argv[0]))[0], 'bildsimbolo', 'bildsimbolo.%s' % dosiertipo))
+    sg.SetGlobalIcon(os.path.join(os.getcwd(), 'bildsimbolo', 'bildsimbolo.%s' % dosiertipo))
     # Krei maldekstran aranĝon
     enigo = [   [sg.Text('Elektu tekston aŭ dosieron por konverti', size=(50,1))],
                 [sg.Text('Tajpu pinjinan tekston aŭ ĉinsignojn:'), sg.InputText(background_color='white', size=(largxo,1), do_not_clear=True)],
@@ -231,4 +231,5 @@ def main():
     cxeffenestro.close()
 
 if __name__ == '__main__':
+    os.chdir(Path(__file__).parent)
     main()
