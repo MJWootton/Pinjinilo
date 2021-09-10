@@ -20,7 +20,7 @@ Konsciu, ke *Pinjiinilo* nek estas tradukilo, nek konservas tonojn — ĝi nur p
   * [*PySimpleGUI*](https://pysimplegui.readthedocs.io)
   * [*xpinyin*](https://pypi.org/project/xpinyin)
   * [*tkinter*](https://wiki.python.org/moin/TkInter) (Oni eble trovos, ke tiu jam estis instalita samtempe de Python mem)
-  * [pyperclip](https://pypi.org/project/pyperclip) (Uzante Linukson, oni bezonas ankaŭ la ilojn [*xclip*](https://github.com/astrand/xclip) aǔ [*xsel*](https://github.com/kfish/xsel), kiuj haveblas en debianidoj per `sudo apt-get install xclip xsel`)
+  * [pyperclip](https://pypi.org/project/pyperclip) (Uzante Linukson, oni bezonas ankaŭ la ilojn [*xclip*](https://github.com/astrand/xclip) aŭ [*xsel*](https://github.com/kfish/xsel), kiuj haveblas en debianidoj per `sudo apt-get install xclip xsel`)
 * [*PyInstaller*](https://www.pyinstaller.org) (nur por krei memstaran ruleblan dosieron)
 
 ### Uzado
