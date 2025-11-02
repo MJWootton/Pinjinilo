@@ -20,20 +20,20 @@ El Popola Ĉinio [1], sed la uzanto povas uzi iun ajn sistemon, se oni kreas sia
 propran dosieron priskribantan ĝin. Python 3 estas bezonata por roli Pinjinon
 [2]. Modulo "xpinyin" [3] necesas por konverti ĉinsignojn.
 
-Ĉi tiu dosiero provizas la grafikan fasadon uzante la modulon PySimpleGUI [4].
+Ĉi tiu dosiero provizas la grafikan fasadon uzante la modulon PySimpleGUI4 [4].
 
 Citaĵoj
 ----------
 [1] https://eo.wikipedia.org/wiki/Esperantigo_de_vortoj_el_%C4%89ina_fonto
 [2] https://www.python.org
 [3] https://pypi.org/project/xpinyin
-[4] https://pysimplegui.readthedocs.io
+[4] https://pypi.org/project/PySimpleGUI4/
 [5] ASCII-arto kreita per http://www.patorjk.com/software/taag
 
 Bezonaĵoj
 ----------
 * Python 3
-* PySimpleGUI
+* PySimpleGUI4
 * Funkcioj (modulo de Pinjinilo)
 
 Aŭtorrajto
@@ -46,7 +46,7 @@ Aŭtorrajto
 import os
 import sys
 import platform
-import PySimpleGUI as sg
+import PySimpleGUI4 as sg
 import pyperclip
 
 import Funkcioj as fk

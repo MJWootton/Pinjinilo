@@ -17,10 +17,12 @@ Konsciu, ke *Pinjiinilo* nek estas tradukilo, nek konservas tonojn — ĝi nur p
 ### Bezonaĵoj
 
 * [*Python 3*](https://www.python.org) kaj la jenaj moduloj de ekstera liveranto:
-  * [*PySimpleGUI*](https://pysimplegui.readthedocs.io)
+  * [*PySimpleGUI4*](https://pypi.org/project/PySimpleGUI4)
   * [*xpinyin*](https://pypi.org/project/xpinyin)
-  * [*tkinter*](https://wiki.python.org/moin/TkInter) (Oni eble trovos, ke tiu jam estis instalita samtempe de Python mem)
-  * [pyperclip](https://pypi.org/project/pyperclip) (Uzante Linukson, oni bezonas ankaŭ la ilojn [*xclip*](https://github.com/astrand/xclip) aŭ [*xsel*](https://github.com/kfish/xsel), kiuj haveblas en debianidoj per `sudo apt-get install xclip xsel`)
+  * [*tkinter*](https://wiki.python.org/moin/TkInter)
+    (Oni eble trovos, ke tiu jam estis instalita samtempe de Python mem. Se `import tkinter` funkcias en Python sen erarmesaĝo, vi ne bezonas fari ion ajn plian)
+  * [pyperclip](https://pypi.org/project/pyperclip)
+    (Uzante Linukson, oni bezonas ankaŭ la ilojn [*xclip*](https://github.com/astrand/xclip) aŭ [*xsel*](https://github.com/kfish/xsel), kiuj haveblas en debianidoj per `sudo apt-get install xclip xsel`)
 * [*PyInstaller*](https://www.pyinstaller.org) (nur por krei memstaran ruleblan dosieron)
 
 ### Uzado
@@ -35,12 +37,12 @@ Oni havas tri opciojn por uzi *Pinjinilon*:
 *Linux*:
 
 ```bash
-$ pyinstaller --onefile --noconsol --icon bildsimbolo/bildsimbolo.png Pinjinilo.py
+pyinstaller --onefile --noconsol --icon bildsimbolo/bildsimbolo.png Pinjinilo.py
 ```
 
 *Windows*:
 ```bash
-$ pyinstaller --onefile --noconsol --icon bildsimbolo/bildsimbolo.ico Pinjinilo.py
+pyinstaller --onefile --noconsol --icon bildsimbolo/bildsimbolo.ico Pinjinilo.py
 ```
 
 *MacOS*:
